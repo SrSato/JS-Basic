@@ -1,5 +1,5 @@
-# JS-Basic Nivell1-Exercici3
+# JS-Basic Nivell1-Exercici4
 
-Variables con nombre y apellido. Se muestran por consola.
+Guardamos dos números en dos variables y mostramos el resultado de su suma por consola.
 
 
