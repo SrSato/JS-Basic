@@ -4,23 +4,125 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Sera Martin">
-	<title>JS-Basic Nivell 2 Exercici 1</title>
+	<title>JS-Basic Nivell 3 Exercici 1</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+	<style>
+		.flex-container{
+			display: flex;
+		}
+		#display{
+			min-height:50px; 
+			min-width:100%;
+			padding: 5px;
+			overflow: hidden;
+		}
+		#cuerpo{
+			width:196px;
+		}
+		#digitos{
+			max-width: 80%;
+		}
+		#operadores > div{
+			width:100%;		
+		}
+	</style>
+
 </head>
 <body>
-	<script>	
+	<div class="w3-container" style="max-width:260px;">
+		<div class="w3-panel w3-card w3-light-grey w3-round-large">
+			<div id="display" class="w3-teal w3-margin-top"></div>
+			<div id="cuerpo" class="flex-container">
+				<div id="digitos">
+					<div class="w3-btn" onclick="meteNum(1);">1</div>
+					<div class="w3-btn" onclick="meteNum(2);">2</div>
+					<div class="w3-btn" onclick="meteNum(3);">3</div>
+					<div class="w3-btn" onclick="meteNum(4);">4</div>
+					<div class="w3-btn" onclick="meteNum(5);">5</div>
+					<div class="w3-btn" onclick="meteNum(6);">6</div>
+					<div class="w3-btn" onclick="meteNum(7);">7</div>
+					<div class="w3-btn" onclick="meteNum(8);">8</div>
+					<div class="w3-btn" onclick="meteNum(9);">9</div>
+					<div class="w3-btn" onclick="meteNum(0);">0</div>
+					<div class="w3-btn" onclick="meteNum('.');">.</div>
+					<div class="w3-btn" onclick="pideCalculo();">=</div>
+				</div>
+				<div id="operadores" >
+					<div class="w3-button w3-light-blue" onclick="meteOp('+');">+</div>
+					<div class="w3-button w3-light-blue" onclick="meteOp('-');">-</div>
+					<div class="w3-button w3-light-blue" onclick="meteOp('x');">x</div>
+					<div class="w3-button w3-light-blue" onclick="meteOp('/');">/</div>
+				</div>				
+			</div>
+			<div id="controles" class="flex-container w3-margin-bottom">
+				<div class="w3-btn w3-block w3-red" onclick="limpia()">CLEAR</div>
+			</div>			
+		</div>
+	</div>	
+	<script>
+		let valor1 = "inicial";
+		let valor2 = "inicial";
+		let operador = "esperando"; 
+
+		function meteNum(valor){
+			if(operador=="esperando"){
+				if(valor1=="inicial"){
+					valor1=valor;
+				}else{
+					valor1=valor1.toString()+valor;
+				}				
+				document.getElementById("display").innerHTML=valor1;
+			}else{
+				if(valor2=="inicial"){
+					valor2=valor;
+				}else{
+					valor2=valor2.toString()+valor;
+				}				
+				document.getElementById("display").innerHTML=document.getElementById("display").innerHTML+valor;
+			}
+		}
+
+		function meteOp(valor){
+			if(operador=="esperando"&&valor1!="inicial"){
+				operador=valor;
+				document.getElementById("display").innerHTML=document.getElementById("display").innerHTML+valor;
+			}
+		}
+
+		function pideCalculo(){
+			if(valor1!="inicial"&&operador!="esperando"&&valor2!="incial"){
+				document.getElementById("display").innerHTML=calculadora(operador,valor1,valor2);
+				reinicia();
+				if(isNaN(document.getElementById("display").innerHTML)!=true){
+					valor1=document.getElementById("display").innerHTML;
+				}
+			}
+		}
+
+		function reinicia(){
+			valor1 = "inicial";
+			valor2 = "inicial";
+			operador = "esperando";
+		}
+
+		function limpia(){
+			document.getElementById("display").innerHTML="";
+			reinicia();
+		}
+
 		function calculadora(operador,valor1,valor2){
 			let res="-";
 			switch(operador){
-				case "suma":
+				case "+":
 					res = parseFloat(valor1) + parseFloat(valor2);
 					break;
-				case "resta":
+				case "-":
 					res = parseFloat(valor1) - parseFloat(valor2);
 					break;
-				case "multiplicación":
+				case "x":
 					res = parseFloat(valor1) * parseFloat(valor2);
 					break;
-				case "división":
+				case "/":
 					if(valor2==0){
 						res = "Indeterminación al dividir por cero";
 					}else{
@@ -31,19 +133,7 @@
 					res="Error, no has seleccionado una operacion valida";
 			}
 			return res;
-		}
-
-		let valor1=0;
-		let valor2=0;
-		let operador = prompt("Escoge una operación entre suma, resta, multiplicación y división: ");
-		do{
-			valor1 = prompt("Escoge el primer valor numérico: ");
-		}while(isNaN(valor1)==true);
-		do{
-			valor2 = prompt("Escoge el segundo valor numérico: ");
-		}while(isNaN(valor2)==true);
-		
-		alert("El resultado de tu operación es: " + calculadora(operador,valor1,valor2));
+		}		
 	</script>	
 </body>
 </html>
