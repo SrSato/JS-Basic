@@ -4,20 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Sera Martin">
-	<title>JS-Basic Nivell 1 Exercici 5</title>
+	<title>JS-Basic Nivell 1 Exercici 6</title>
 </head>
 <body>
 	<script>
-		let nota="-";
-		do{
-			nota = prompt("Por favor, dime cuál es tu nota (entre 0 y 10): ",5);
-		}while (nota<0 || nota>10);
-		
-		if(nota>=5){
-			alert("Enhorabuena, has aprobado con un "+nota);
-		}else{
-			alert("Oh, lo siento, has suspendido con un "+nota);
-		}
+		let frase="Tinc un cotxe de color blau";
+		console.log("Frase original: "+frase);
+		let fraseColor=frase.replace(/blau/g, "verd");
+		console.log("Cambio de color: "+fraseColor);
+		let fraseUs=frase.replace(/o/g,"u");
+		console.log("Con rosquillas en la boca: "+fraseUs);		
 	</script>	
 </body>
 </html>

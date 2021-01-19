@@ -1,4 +1,5 @@
-# JS-Basic Nivell1-Exercici5
+# JS-Basic Nivell1-Exercici6
 
-Comprobamos una nota y cambiamos el flujo del programa dependiendo de si aprueba (>=5) o suspende (<5)
+Remplazamos alguna palabra en una frase (uso /g para encontrar todas las instancias de la palabra dada, aunque sólo haya una en la frase ;) ).
+Remplazamos alguna vocal por otra (esta vez sí el /g es totalmente necesario)
 
