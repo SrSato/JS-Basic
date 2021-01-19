@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Sera Martin">
-	<title>JS-Basic Nivell 1 Exercici 6</title>
+	<title>JS-Basic Nivell 1 Exercici 7</title>
 </head>
 <body>
 	<script>
-		let frase="Tinc un cotxe de color blau";
-		console.log("Frase original: "+frase);
-		let fraseColor=frase.replace(/blau/g, "verd");
-		console.log("Cambio de color: "+fraseColor);
-		let fraseUs=frase.replace(/o/g,"u");
-		console.log("Con rosquillas en la boca: "+fraseUs);		
+		let lista=['taula', 'cadira', 'ordinador', 'libreta'];
+		lista.forEach(frase);
+
+		function frase(objeto,posicion){
+			console.log("L'objecte "+objeto+" està a la posició "+posicion);
+		}		
 	</script>	
 </body>
 </html>
