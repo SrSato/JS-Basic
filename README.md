@@ -1,5 +1,5 @@
-# JS-Basic Nivell1-Exercici2
+# JS-Basic Nivell1-Exercici3
 
-Alert con mi nombre
+Variables con nombre y apellido. Se muestran por consola.
 
 
