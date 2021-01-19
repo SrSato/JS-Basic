@@ -1,4 +1,6 @@
-# JS-Basic Nivell1-Exercici7
+# JS-Basic Nivell2-Exercici8
 
-Función calculadora básica con suma, resta y multiplicación. Pedimos input por pantalla y retornamos el resultado también por pantalla.
+Función calculadora básica con suma, resta, multiplicación y división. Pedimos input por pantalla, controlamos que las operaciones sean las que sabemos hacer, que 
+los valores a operar sean números, que se puedan usar decimales y que la división entre cero recoja correctamente el resultado indeterminado.
+Retornamos el resultado también por pantalla.
 

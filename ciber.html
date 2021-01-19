@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Sera Martin">
-	<title>JS-Basic Nivell 1 Exercici 7</title>
+	<title>JS-Basic Nivell 2 Exercici 1</title>
 </head>
 <body>
-	<script>		
+	<script>	
 		function calculadora(operador,valor1,valor2){
-			let res="-"
+			let res="-";
 			switch(operador){
 				case "suma":
 					res = parseFloat(valor1) + parseFloat(valor2);
@@ -20,15 +20,29 @@
 				case "multiplicación":
 					res = parseFloat(valor1) * parseFloat(valor2);
 					break;
+				case "división":
+					if(valor2==0){
+						res = "Indeterminación al dividir por cero";
+					}else{
+						res = parseFloat(valor1) / parseFloat(valor2);
+					}
+					break;
 				default:
 					res="Error, no has seleccionado una operacion valida";
 			}
 			return res;
 		}
 
-		let operador = prompt("Escoge una operación entre suma, resta y multiplicación: ");
-		let valor1 = prompt("Escoge el primer valor: ");
-		let valor2 = prompt("Escoge el segundo valor: ");
+		let valor1=0;
+		let valor2=0;
+		let operador = prompt("Escoge una operación entre suma, resta, multiplicación y división: ");
+		do{
+			valor1 = prompt("Escoge el primer valor numérico: ");
+		}while(isNaN(valor1)==true);
+		do{
+			valor2 = prompt("Escoge el segundo valor numérico: ");
+		}while(isNaN(valor2)==true);
+		
 		alert("El resultado de tu operación es: " + calculadora(operador,valor1,valor2));
 	</script>	
 </body>
