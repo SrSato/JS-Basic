@@ -1,4 +1,4 @@
 # JS-Basic Nivell1-Exercici7
 
-Recorremos un array y mostramos contenido y posición en la consola.
+Función calculadora básica con suma, resta y multiplicación. Pedimos input por pantalla y retornamos el resultado también por pantalla.
 

@@ -7,13 +7,29 @@
 	<title>JS-Basic Nivell 1 Exercici 7</title>
 </head>
 <body>
-	<script>
-		let lista=['taula', 'cadira', 'ordinador', 'libreta'];
-		lista.forEach(frase);
+	<script>		
+		function calculadora(operador,valor1,valor2){
+			let res="-"
+			switch(operador){
+				case "suma":
+					res = parseFloat(valor1) + parseFloat(valor2);
+					break;
+				case "resta":
+					res = parseFloat(valor1) - parseFloat(valor2);
+					break;
+				case "multiplicación":
+					res = parseFloat(valor1) * parseFloat(valor2);
+					break;
+				default:
+					res="Error, no has seleccionado una operacion valida";
+			}
+			return res;
+		}
 
-		function frase(objeto,posicion){
-			console.log("L'objecte "+objeto+" està a la posició "+posicion);
-		}		
+		let operador = prompt("Escoge una operación entre suma, resta y multiplicación: ");
+		let valor1 = prompt("Escoge el primer valor: ");
+		let valor2 = prompt("Escoge el segundo valor: ");
+		alert("El resultado de tu operación es: " + calculadora(operador,valor1,valor2));
 	</script>	
 </body>
 </html>
