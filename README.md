@@ -1,5 +1,5 @@
-# JS-Basic Nivell1-Exercici1
+# JS-Basic Nivell1-Exercici2
 
-Hola Mundo por consola 
+Alert con mi nombre
 
 
