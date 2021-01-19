@@ -4,13 +4,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Sera Martin">
-	<title>JS-Basic Nivell 1 Exercici 4</title>
+	<title>JS-Basic Nivell 1 Exercici 5</title>
 </head>
 <body>
 	<script>
-		let num1 = 34;
-		let num2 = 56;
-		console.log("La suma de "+num1+" y "+num2+" es: "+(num1+num2));
+		let nota="-";
+		do{
+			nota = prompt("Por favor, dime cuál es tu nota (entre 0 y 10): ",5);
+		}while (nota<0 || nota>10);
+		
+		if(nota>=5){
+			alert("Enhorabuena, has aprobado con un "+nota);
+		}else{
+			alert("Oh, lo siento, has suspendido con un "+nota);
+		}
 	</script>	
 </body>
 </html>

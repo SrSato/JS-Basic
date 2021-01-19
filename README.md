@@ -1,5 +1,4 @@
-# JS-Basic Nivell1-Exercici4
+# JS-Basic Nivell1-Exercici5
 
-Guardamos dos números en dos variables y mostramos el resultado de su suma por consola.
-
+Comprobamos una nota y cambiamos el flujo del programa dependiendo de si aprueba (>=5) o suspende (<5)
 
